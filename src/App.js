@@ -46,6 +46,20 @@ function App() {
     );
   };
 
+  // const editTodo = (todoGived, inputValue) => {
+  //   setInputValue(todoGived.text);
+  //   setTodos(
+  //     todos.map(
+  //       function(todo) {
+
+  //         return todo.id === todoGived.id
+  //           ? { ...todo, text: inputValue }
+  //           : todo
+  //     }
+  //     )
+  //   );
+  // };
+
   const deleteTodo = (id) => { setTodos(todos.filter((todo) => todo.id !== id)); };
 
   return (
@@ -61,6 +75,7 @@ function App() {
         />
         <button type="submit">Добавить</button>
       </form>
+      {/* <button onClick={editTodo(id, inputValue)}>Сохранить</button> */}
 
       <ul>
         {todos.map((todo) => (
@@ -70,6 +85,7 @@ function App() {
               textDecoration: todo.completed ? 'line-through' : 'none'
             }}
           >
+            {/* <span onClick={() => toggleTodo(todo.id)} onDoubleClick={() => editTodo(todo, inputValue)} style={{ cursor: 'pointer' }}> */}
             <span onClick={() => toggleTodo(todo.id)} style={{ cursor: 'pointer' }}>
               {todo.text}
             </span>
